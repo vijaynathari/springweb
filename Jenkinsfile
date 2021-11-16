@@ -7,11 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean'
-                sh 'echo $JAVA_HOME'
-                sh 'mvn -version'
-                sh 'java -version'
-                sh 'mvn build -DskipTests'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage('Test') {
