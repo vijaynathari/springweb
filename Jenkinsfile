@@ -9,7 +9,9 @@ pipeline {
             steps {
                 sh 'mvn clean'
                 sh 'echo $JAVA_HOME'
-                sh 'mvn clean package -DskipTests spring-boot:repackage'
+                sh 'mvn -version'
+                sh 'java -version'
+                sh 'mvn -DskipTests=true  package'
             }
         }
         stage('Test') {
