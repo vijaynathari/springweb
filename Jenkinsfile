@@ -11,7 +11,7 @@ pipeline {
                 sh 'echo $JAVA_HOME'
                 sh 'mvn -version'
                 sh 'java -version'
-                sh 'mvn install -DskipTests'
+                sh 'mvn build -DskipTests'
             }
         }
         stage('Test') {
