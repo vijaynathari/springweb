@@ -15,7 +15,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup mvn spring-boot:run >> ./testlog.log 2>&1 &'
             }
